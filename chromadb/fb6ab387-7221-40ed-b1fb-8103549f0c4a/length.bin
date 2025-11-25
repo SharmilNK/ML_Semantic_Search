@@ -1,0 +1,21 @@
+Getting predictions from the tree
+
+We continue splitting the tree either until we cannot split any further, or we decide to stop
+The bottom nodes are called “leaves” of the tree
+If a leaf has >1 examples at it, we take the majority class and label all examples at the leaf with that class prediction 
+
+(4,4)
+
+(3,1)
+
+(1,3)
+
+Prediction: ”Class A”
+
+(A,B)
+
+Prediction: ”Class B”
+
+Leaf 1
+
+Leaf

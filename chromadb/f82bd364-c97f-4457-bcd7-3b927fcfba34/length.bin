@@ -1,0 +1,21 @@
+Regression trees
+
+We can also use decision tress for regression
+Rather than impurity to measure split quality we use MSE of children
+Rather than taking the majority vote of samples in a leaf, we calculate the mean target value of the samples
+
+Node
+
+Leaf 1
+
+Leaf 2
+
+4 samples
+Target values: [5,9,6,8]
+
+Prediction for leaf: (5+9+6+8)/4 = 7
+
+3 samples
+Target values: [4,2,3] 
+
+Prediction for leaf: (4+2+
