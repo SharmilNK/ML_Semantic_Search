@@ -25,7 +25,7 @@ if not os.path.exists(db_path):
 
 # We use the specific 0.4.x syntax which matches the pinned requirement
 client = chromadb.PersistentClient(path=db_path)
-collection = client.get_collection("ml_class_slides")
+collection = client.get_or_create_collection("ml_class_slides")
 
 # --- 2. Core Search Logic ---
 
