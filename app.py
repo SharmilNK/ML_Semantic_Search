@@ -5,7 +5,7 @@ import json
 import traceback
 import os
 import sys
-
+import tempfile
 # --- 1. Setup & Initialization ---
 
 # Initialize the Embedding Model
@@ -15,7 +15,7 @@ model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 # Connect to the existing ChromaDB
 # Fix: Use absolute path to ensure we find the DB folder regardless of where the script is run from
 current_dir = os.path.dirname(os.path.abspath(__file__))
-db_path = os.path.join(current_dir, "chromadb")
+db_path = os.path.join(tempfile.gettempdir(), "chromadb")
 
 print(f"Connecting to ChromaDB at: {db_path}")
 
@@ -24,9 +24,17 @@ if not os.path.exists(db_path):
     print("Make sure you have copied the 'chromadb' folder from your notebook directory to this folder.")
 
 # We use the specific 0.4.x syntax which matches the pinned requirement
+
+
 client = chromadb.PersistentClient(path=db_path)
 collection = client.get_or_create_collection("ml_class_slides")
-
+# Example: add documents if empty
+if collection.count() == 0:
+    collection.add(
+        documents=["Intro to ML", "Gradient Descent details"],
+        metadatas=[{"source":"slides1", "slide":1}, {"source":"slides2", "slide":2}],
+        ids=["doc1","doc2"]
+    )
 # --- 2. Core Search Logic ---
 
 def semantic_search(query, n_results=3):
