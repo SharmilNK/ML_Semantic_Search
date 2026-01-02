@@ -1,12 +1,12 @@
 # ML_Semantic_Search
 
-# 🤖 ML Class Semantic Search Engine
+#  ML Class Semantic Search Engine
 
 A **semantic search app** built on Streamlit that lets you search and explore lecture slides using **AI embeddings** and **ChromaDB** — all powered by **Gradio** for a clean web UI.
 
 ---
 
-## 🚀 Features
+##  Features
 
 -  **Semantic search** — understands meaning beyond keywords  
 -  **Embeddings with Sentence Transformers** (`all-MiniLM-L6-v2`)  
