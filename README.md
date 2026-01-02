@@ -2,18 +2,17 @@
 
 # 🤖 ML Class Semantic Search Engine
 
-A **semantic search app** that lets you explore your local PowerPoint lecture slides using **AI embeddings** and **ChromaDB** — all powered by **Gradio** for a clean web UI.
+A **semantic search app** built on Streamlit that lets you search and explore lecture slides using **AI embeddings** and **ChromaDB** — all powered by **Gradio** for a clean web UI.
 
 ---
 
 ## 🚀 Features
 
--  **Semantic search** — understands meaning, not just keywords  
+-  **Semantic search** — understands meaning beyond keywords  
 -  **Embeddings with Sentence Transformers** (`all-MiniLM-L6-v2`)  
 -  **Automatic slide extraction** from `.pptx` files  
 -  **Persistent ChromaDB** database (stored locally under `./chroma_db/`)  
--  **Gradio web app** interface for ingestion, persistence, and searching  
--  Simple deployment to **Hugging Face Spaces**
+-  **Streamlit web app** interface for ingestion, persistence, and searching  
 
 ---
 
